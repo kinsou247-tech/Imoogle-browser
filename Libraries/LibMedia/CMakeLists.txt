@@ -14,7 +14,7 @@ set(SOURCES
     VideoFrame.cpp
 )
 
-ladybird_lib(LibMedia media EXPLICIT_SYMBOL_EXPORT)
+imooglebrowser_lib(LibMedia media EXPLICIT_SYMBOL_EXPORT)
 target_link_libraries(LibMedia PRIVATE LibCore LibCrypto LibIPC LibGfx LibThreading LibUnicode)
 
 target_sources(LibMedia PRIVATE
@@ -32,22 +32,22 @@ else()
     target_link_libraries(LibMedia PRIVATE ${FFMPEG_LIBRARIES})
 endif()
 
-if (LADYBIRD_AUDIO_BACKEND STREQUAL "PULSE")
+if (IMOOGLE_BROWSER_AUDIO_BACKEND STREQUAL "PULSE")
     target_sources(LibMedia PRIVATE
         Audio/PlaybackStreamPulseAudio.cpp
         Audio/PulseAudioWrappers.cpp
     )
     target_link_libraries(LibMedia PRIVATE PkgConfig::PULSEAUDIO)
-elseif (LADYBIRD_AUDIO_BACKEND STREQUAL "AUDIO_UNIT")
+elseif (IMOOGLE_BROWSER_AUDIO_BACKEND STREQUAL "AUDIO_UNIT")
     target_sources(LibMedia PRIVATE Audio/PlaybackStreamAudioUnit.cpp)
     find_library(AUDIO_UNIT AudioUnit REQUIRED)
     target_link_libraries(LibMedia PRIVATE ${AUDIO_UNIT})
-elseif (LADYBIRD_AUDIO_BACKEND STREQUAL "OBOE")
+elseif (IMOOGLE_BROWSER_AUDIO_BACKEND STREQUAL "OBOE")
     target_sources(LibMedia PRIVATE Audio/PlaybackStreamOboe.cpp)
     find_package(oboe REQUIRED CONFIG)
     target_link_libraries(LibMedia PRIVATE log oboe::oboe)
-elseif (DEFINED LADYBIRD_AUDIO_BACKEND)
-    message(FATAL_ERROR "Please update ${CMAKE_CURRENT_LIST_FILE} for audio backend ${LADYBIRD_AUDIO_BACKEND}")
+elseif (DEFINED IMOOGLE_BROWSER_AUDIO_BACKEND)
+    message(FATAL_ERROR "Please update ${CMAKE_CURRENT_LIST_FILE} for audio backend ${IMOOGLE_BROWSER_AUDIO_BACKEND}")
 else ()
     target_sources(LibMedia PRIVATE Audio/PlaybackStream.cpp)
 endif()

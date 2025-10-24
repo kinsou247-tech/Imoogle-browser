@@ -64,7 +64,7 @@ enum class NavigatorCompatibilityMode {
     WebKit
 };
 
-#define BROWSER_NAME "Ladybird"
+#define BROWSER_NAME "ImoogleBrowser"
 #define BROWSER_VERSION "1.0"
 
 constexpr auto default_user_agent = "Mozilla/5.0 (" OS_STRING "; " CPU_STRING ") " BROWSER_NAME "/" BROWSER_VERSION ""sv;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023, Andrew Kaster <andrew@ladybird.org>
+ * Copyright (c) 2023, Andrew Kaster <andrew@imooglebrowser.org>
  *
  * SPDX-License-Identifier: BSD-2-Clause
  */

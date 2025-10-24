@@ -5,13 +5,13 @@ on:
     branches: [master]
 
 env:
-  LADYBIRD_SOURCE_DIR: ${{ github.workspace }}
+  IMOOGLE_BROWSER_SOURCE_DIR: ${{ github.workspace }}
   VCPKG_ROOT: ${{ github.workspace }}/Build/vcpkg
 
 jobs:
   run_and_update_results:
     runs-on: test262-runner
-    if: github.repository == 'LadybirdBrowser/ladybird'
+    if: github.repository == 'Imoogle BrowserBrowser/imooglebrowser'
 
     concurrency: libjs-test262
 
@@ -21,19 +21,19 @@ jobs:
           echo "Cleaning up previous run"
           rm -rf "${{ github.workspace }}/*"
 
-      - name: Checkout LadybirdBrowser/ladybird
+      - name: Checkout Imoogle BrowserBrowser/imooglebrowser
         uses: actions/checkout@v5
 
-      - name: Checkout LadybirdBrowser/libjs-test262
+      - name: Checkout Imoogle BrowserBrowser/libjs-test262
         uses: actions/checkout@v5
         with:
-          repository: LadybirdBrowser/libjs-test262
+          repository: Imoogle BrowserBrowser/libjs-test262
           path: libjs-test262
 
-      - name: Checkout LadybirdBrowser/libjs-data
+      - name: Checkout Imoogle BrowserBrowser/libjs-data
         uses: actions/checkout@v5
         with:
-          repository: LadybirdBrowser/libjs-data
+          repository: Imoogle BrowserBrowser/libjs-data
           path: libjs-data
 
       - name: Checkout tc39/test262
@@ -150,9 +150,9 @@ jobs:
       - name: Deploy to GitHub
         uses: JamesIves/github-pages-deploy-action@v4.7.3
         with:
-          git-config-name: LadybirdBot
-          git-config-email: ladybirdbot@ladybird.org
+          git-config-name: Imoogle BrowserBot
+          git-config-email: imooglebrowserbot@imooglebrowser.org
           branch: master
-          repository-name: LadybirdBrowser/libjs-data
-          token: ${{ secrets.LADYBIRD_BOT_TOKEN }}
+          repository-name: Imoogle BrowserBrowser/libjs-data
+          token: ${{ secrets.IMOOGLE_BROWSER_BOT_TOKEN }}
           folder: libjs-data

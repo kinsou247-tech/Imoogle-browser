@@ -45,7 +45,7 @@ ErrorOr<NonnullRefPtr<PulseAudioContext>> PulseAudioContext::instance()
         if (api == nullptr)
             return Error::from_string_literal("Failed to get PulseAudio API");
 
-        auto* context = pa_context_new(api, "Ladybird");
+        auto* context = pa_context_new(api, "ImoogleBrowser");
         if (context == nullptr)
             return Error::from_string_literal("Failed to get PulseAudio connection context");
 

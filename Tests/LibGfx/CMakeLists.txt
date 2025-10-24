@@ -10,5 +10,5 @@ set(TEST_SOURCES
 )
 
 foreach(source IN LISTS TEST_SOURCES)
-    ladybird_test("${source}" LibGfx LIBS LibGfx)
+    imooglebrowser_test("${source}" LibGfx LIBS LibGfx)
 endforeach()

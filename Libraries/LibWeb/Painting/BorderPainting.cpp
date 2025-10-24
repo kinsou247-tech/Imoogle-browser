@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2020, Andreas Kling <andreas@ladybird.org>
- * Copyright (c) 2021-2025, Sam Atkins <sam@ladybird.org>
+ * Copyright (c) 2020, Andreas Kling <andreas@imooglebrowser.org>
+ * Copyright (c) 2021-2025, Sam Atkins <sam@imooglebrowser.org>
  * Copyright (c) 2022, MacDue <macdue@dueutil.tech>
  *
  * SPDX-License-Identifier: BSD-2-Clause

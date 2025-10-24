@@ -6,6 +6,6 @@
 // do not need to install all the prerequsite dependencies from scratch,
 // getting you into your development environment faster!
 {
-    "name": "Ladybird (Pre-Built Image)",
-    "image": "ghcr.io/ladybirdbrowser/ladybird-devcontainer:base"
+    "name": "ImoogleBrowser (Pre-Built Image)",
+    "image": "ghcr.io/imooglebrowserbrowser/imooglebrowser-devcontainer:base"
 }

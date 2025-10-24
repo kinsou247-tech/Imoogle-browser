@@ -1,9 +1,9 @@
 /*
- * Copyright (c) 2022-2023, Andreas Kling <andreas@ladybird.org>
+ * Copyright (c) 2022-2023, Andreas Kling <andreas@imooglebrowser.org>
  * Copyright (c) 2022, Matthew Costa <ucosty@gmail.com>
  * Copyright (c) 2022, Filiph Sandström <filiph.sandstrom@filfatstudios.com>
  * Copyright (c) 2023, Linus Groh <linusg@serenityos.org>
- * Copyright (c) 2024-2025, Sam Atkins <sam@ladybird.org>
+ * Copyright (c) 2024-2025, Sam Atkins <sam@imooglebrowser.org>
  *
  * SPDX-License-Identifier: BSD-2-Clause
  */
@@ -31,14 +31,14 @@
 #include <QWheelEvent>
 #include <QWindow>
 
-namespace Ladybird {
+namespace ImoogleBrowser {
 
 static QIcon const& app_icon()
 {
     static QIcon icon;
     if (icon.isNull()) {
         QPixmap pixmap;
-        pixmap.load(":/Icons/ladybird.png");
+        pixmap.load(":/Icons/imooglebrowser.png");
         icon = QIcon(pixmap);
     }
     return icon;
@@ -233,7 +233,7 @@ BrowserWindow::BrowserWindow(Vector<URL::URL> const& initial_urls, IsPopupWindow
     QObject::connect(m_tabs_container, &QTabWidget::currentChanged, [this](int index) {
         auto* tab = as<Tab>(m_tabs_container->widget(index));
         if (tab)
-            setWindowTitle(QString("%1 - Ladybird").arg(tab->title()));
+            setWindowTitle(QString("%1 - ImoogleBrowser").arg(tab->title()));
 
         set_current_tab(tab);
     });
@@ -434,7 +434,7 @@ void BrowserWindow::tab_title_changed(int index, QString const& title)
     m_tabs_container->setTabToolTip(index, title);
 
     if (m_tabs_container->currentIndex() == index)
-        setWindowTitle(QString("%1 - Ladybird").arg(title));
+        setWindowTitle(QString("%1 - ImoogleBrowser").arg(title));
 }
 
 void BrowserWindow::tab_favicon_changed(int index, QIcon const& icon)
@@ -472,7 +472,7 @@ void BrowserWindow::tab_audio_play_state_changed(int index, Web::HTML::AudioPlay
     case Web::HTML::AudioPlayState::Playing:
         auto* button = new TabBarButton(icon_for_page_mute_state(*tab));
         button->setToolTip(tool_tip_for_page_mute_state(*tab));
-        button->setObjectName("LadybirdAudioState");
+        button->setObjectName("ImoogleBrowserAudioState");
 
         connect(button, &QPushButton::clicked, this, [this, tab, position]() {
             tab->view().toggle_page_mute_state();
@@ -522,7 +522,7 @@ QString BrowserWindow::tool_tip_for_page_mute_state(Tab& tab) const
 QTabBar::ButtonPosition BrowserWindow::audio_button_position_for_tab(int tab_index) const
 {
     if (auto* button = m_tabs_container->tabBar()->tabButton(tab_index, QTabBar::LeftSide)) {
-        if (button->objectName() != "LadybirdAudioState")
+        if (button->objectName() != "ImoogleBrowserAudioState")
             return QTabBar::RightSide;
     }
 

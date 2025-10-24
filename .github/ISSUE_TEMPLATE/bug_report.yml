@@ -6,7 +6,7 @@ body:
     attributes:
       label: Summary
       description: Describe the problem in 1 or 2 short sentences.
-      placeholder: When I … in Ladybird, …
+      placeholder: When I … in Imoogle Browser, …
     validations:
       required: true
   - type: dropdown
@@ -51,22 +51,22 @@ body:
       value: |
         &nbsp; <!-- add some vertical whitespace -->
         ## Reduced test case
-        Either provide the URL for a [reduced test case](https://github.com/LadybirdBrowser/ladybird/blob/master/ISSUES.md#how-you-can-write-a-reduced-test-case) that reproduces the problem, or else HTML/SVG/etc. source for a reduced test case.
+        Either provide the URL for a [reduced test case](https://github.com/Imoogle BrowserBrowser/imooglebrowser/blob/master/ISSUES.md#how-you-can-write-a-reduced-test-case) that reproduces the problem, or else HTML/SVG/etc. source for a reduced test case.
         > [!IMPORTANT]
-        > A [reduced test case](https://github.com/LadybirdBrowser/ladybird/blob/master/ISSUES.md#how-you-can-write-a-reduced-test-case) may be the most important thing you can give us; without it, we’re much less likely to isolate the cause.
+        > A [reduced test case](https://github.com/Imoogle BrowserBrowser/imooglebrowser/blob/master/ISSUES.md#how-you-can-write-a-reduced-test-case) may be the most important thing you can give us; without it, we’re much less likely to isolate the cause.
   - type: input
     id: reduced-test-case-url
     attributes:
       label: URL for a reduced test case
       description: |
-        Provide the URL for a [reduced test case](https://github.com/LadybirdBrowser/ladybird/blob/master/ISSUES.md#how-you-can-write-a-reduced-test-case) that reproduces the problem (e.g., using a site such as [CodePen](https://codepen.io/pen/), [JS Bin](https://jsbin.com), or [JSFiddle](https://jsfiddle.net)). Or if you don’t have a [reduced test case](https://github.com/LadybirdBrowser/ladybird/blob/master/ISSUES.md#how-you-can-write-a-reduced-test-case), at least provide the URL for a website/page that causes the problem. Otherwise just enter `N/A` here.
+        Provide the URL for a [reduced test case](https://github.com/Imoogle BrowserBrowser/imooglebrowser/blob/master/ISSUES.md#how-you-can-write-a-reduced-test-case) that reproduces the problem (e.g., using a site such as [CodePen](https://codepen.io/pen/), [JS Bin](https://jsbin.com), or [JSFiddle](https://jsfiddle.net)). Or if you don’t have a [reduced test case](https://github.com/Imoogle BrowserBrowser/imooglebrowser/blob/master/ISSUES.md#how-you-can-write-a-reduced-test-case), at least provide the URL for a website/page that causes the problem. Otherwise just enter `N/A` here.
     validations:
       required: true
   - type: textarea
     id: reduced-test-case-source
     attributes:
       label: HTML/SVG/etc. source for a reduced test case
-      description: If you’ve not provided the URL for a [reduced test case](https://github.com/LadybirdBrowser/ladybird/blob/master/ISSUES.md#how-you-can-write-a-reduced-test-case) that reproduces the problem, then paste in below the HTML/SVG/etc. source for a reduced test case. Otherwise just enter `N/A` here. What you paste in will be formatted as a code block — so, no need to put code fence backticks around it.
+      description: If you’ve not provided the URL for a [reduced test case](https://github.com/Imoogle BrowserBrowser/imooglebrowser/blob/master/ISSUES.md#how-you-can-write-a-reduced-test-case) that reproduces the problem, then paste in below the HTML/SVG/etc. source for a reduced test case. Otherwise just enter `N/A` here. What you paste in will be formatted as a code block — so, no need to put code fence backticks around it.
       value:
       render: html
     validations:
@@ -81,7 +81,7 @@ body:
       label: |
         Log output and (if possible) backtrace
       description: |
-        Copy and paste the full log output from Ladybird — including error messages — as well as any backtrace that Ladybird reported.
+        Copy and paste the full log output from Imoogle Browser — including error messages — as well as any backtrace that Imoogle Browser reported.
         What you paste in will be formatted as a code block — so, no need to put code fence backticks around it.
       value:
       render: shell
@@ -109,8 +109,8 @@ body:
     attributes:
       value: |
         &nbsp; <!-- add some vertical whitespace -->
-        ## :heart: Become a Ladybird supporter
+        ## :heart: Become a Imoogle Browser supporter
 
-        Ladybird is funded entirely by sponsorships and donations from people and companies who care about the open web.\
-        We accept one-time and recurring monthly donations via [**Donorbox**](https://donorbox.org/ladybird).
+        Imoogle Browser is funded entirely by sponsorships and donations from people and companies who care about the open web.\
+        We accept one-time and recurring monthly donations via [**Donorbox**](https://donorbox.org/imooglebrowser).
         &nbsp; <!-- add some vertical whitespace -->

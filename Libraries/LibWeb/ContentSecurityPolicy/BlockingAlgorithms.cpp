@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2025, Luke Wilde <luke@ladybird.org>
- * Copyright (c) 2025, Kenneth Myhra <kennethmyhra@ladybird.org>
+ * Copyright (c) 2025, Luke Wilde <luke@imooglebrowser.org>
+ * Copyright (c) 2025, Kenneth Myhra <kennethmyhra@imooglebrowser.org>
  *
  * SPDX-License-Identifier: BSD-2-Clause
  */

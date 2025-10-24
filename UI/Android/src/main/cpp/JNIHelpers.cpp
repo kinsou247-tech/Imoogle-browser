@@ -7,7 +7,7 @@
 #include "JNIHelpers.h"
 #include <AK/Utf16View.h>
 
-namespace Ladybird {
+namespace ImoogleBrowser {
 
 jstring JavaEnvironment::jstring_from_ak_string(String const& str)
 {

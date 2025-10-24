@@ -10,5 +10,5 @@ set(GENERATED_SOURCES
     ../../Services/RequestServer/RequestServerEndpoint.h
 )
 
-ladybird_lib(LibRequests requests)
+imooglebrowser_lib(LibRequests requests)
 target_link_libraries(LibRequests PRIVATE LibCore LibIPC)

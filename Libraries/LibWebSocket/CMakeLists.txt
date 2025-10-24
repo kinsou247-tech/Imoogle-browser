@@ -5,5 +5,5 @@ set(SOURCES
     WebSocket.cpp
 )
 
-ladybird_lib(LibWebSocket websocket)
+imooglebrowser_lib(LibWebSocket websocket)
 target_link_libraries(LibWebSocket PRIVATE LibCore LibCrypto LibTLS LibURL LibDNS)

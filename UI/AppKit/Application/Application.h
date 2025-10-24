@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023-2025, Tim Flynn <trflynn89@ladybird.org>
+ * Copyright (c) 2023-2025, Tim Flynn <trflynn89@imooglebrowser.org>
  *
  * SPDX-License-Identifier: BSD-2-Clause
  */
@@ -10,7 +10,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-namespace Ladybird {
+namespace ImoogleBrowser {
 
 class Application final : public WebView::Application {
     WEB_VIEW_APPLICATION(Application)

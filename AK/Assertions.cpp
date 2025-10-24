@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018-2020, Andreas Kling <andreas@ladybird.org>
+ * Copyright (c) 2018-2020, Andreas Kling <andreas@imooglebrowser.org>
  *
  * SPDX-License-Identifier: BSD-2-Clause
  */
@@ -46,7 +46,7 @@ void dump_backtrace(unsigned frames_to_skip, unsigned max_depth)
 {
     // We should be using cpptrace for everything but android.
     auto stacktrace = cpptrace::generate_trace(frames_to_skip, max_depth);
-    auto* var = getenv("LADYBIRD_BACKTRACE_SNIPPETS");
+    auto* var = getenv("IMOOGLE_BROWSER_BACKTRACE_SNIPPETS");
     bool print_snippets = var && strnlen(var, 1) > 0;
     static auto formatter = cpptrace::formatter {}.snippets(print_snippets);
     formatter.print(std::cerr, stacktrace);

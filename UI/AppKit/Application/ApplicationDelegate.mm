@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023-2025, Tim Flynn <trflynn89@ladybird.org>
+ * Copyright (c) 2023-2025, Tim Flynn <trflynn89@imooglebrowser.org>
  *
  * SPDX-License-Identifier: BSD-2-Clause
  */
@@ -8,7 +8,7 @@
 
 #import <Application/ApplicationDelegate.h>
 #import <Interface/InfoBar.h>
-#import <Interface/LadybirdWebView.h>
+#import <Interface/ImoogleBrowserWebView.h>
 #import <Interface/Menu.h>
 #import <Interface/Tab.h>
 #import <Interface/TabController.h>
@@ -130,7 +130,7 @@
 
     auto message = MUST(String::formatted("DevTools is enabled on port {}", WebView::Application::browser_options().devtools_port));
 
-    [self.info_bar showWithMessage:Ladybird::string_to_ns_string(message)
+    [self.info_bar showWithMessage:ImoogleBrowser::string_to_ns_string(message)
                 dismissButtonTitle:@"Disable"
               dismissButtonClicked:^{
                   MUST(WebView::Application::the().toggle_devtools_enabled());
@@ -214,10 +214,10 @@
     auto* process_name = [[NSProcessInfo processInfo] processName];
     auto* submenu = [[NSMenu alloc] initWithTitle:process_name];
 
-    [submenu addItem:Ladybird::create_application_menu_item(WebView::Application::the().open_about_page_action())];
+    [submenu addItem:ImoogleBrowser::create_application_menu_item(WebView::Application::the().open_about_page_action())];
     [submenu addItem:[NSMenuItem separatorItem]];
 
-    [submenu addItem:Ladybird::create_application_menu_item(WebView::Application::the().open_settings_page_action())];
+    [submenu addItem:ImoogleBrowser::create_application_menu_item(WebView::Application::the().open_settings_page_action())];
     [submenu addItem:[NSMenuItem separatorItem]];
 
     [submenu addItem:[[NSMenuItem alloc] initWithTitle:[NSString stringWithFormat:@"Hide %@", process_name]
@@ -271,11 +271,11 @@
                                                 action:@selector(cut:)
                                          keyEquivalent:@"x"]];
 
-    [submenu addItem:Ladybird::create_application_menu_item(WebView::Application::the().copy_selection_action())];
-    [submenu addItem:Ladybird::create_application_menu_item(WebView::Application::the().paste_action())];
+    [submenu addItem:ImoogleBrowser::create_application_menu_item(WebView::Application::the().copy_selection_action())];
+    [submenu addItem:ImoogleBrowser::create_application_menu_item(WebView::Application::the().paste_action())];
     [submenu addItem:[NSMenuItem separatorItem]];
 
-    [submenu addItem:Ladybird::create_application_menu_item(WebView::Application::the().select_all_action())];
+    [submenu addItem:ImoogleBrowser::create_application_menu_item(WebView::Application::the().select_all_action())];
     [submenu addItem:[NSMenuItem separatorItem]];
 
     [submenu addItem:[[NSMenuItem alloc] initWithTitle:@"Find..."
@@ -300,25 +300,25 @@
     auto* menu = [[NSMenuItem alloc] init];
     auto* submenu = [[NSMenu alloc] initWithTitle:@"View"];
 
-    auto* zoom_menu = Ladybird::create_application_menu(WebView::Application::the().zoom_menu());
+    auto* zoom_menu = ImoogleBrowser::create_application_menu(WebView::Application::the().zoom_menu());
     auto* zoom_menu_item = [[NSMenuItem alloc] initWithTitle:[zoom_menu title]
                                                       action:nil
                                                keyEquivalent:@""];
     [zoom_menu_item setSubmenu:zoom_menu];
 
-    auto* color_scheme_menu = Ladybird::create_application_menu(WebView::Application::the().color_scheme_menu());
+    auto* color_scheme_menu = ImoogleBrowser::create_application_menu(WebView::Application::the().color_scheme_menu());
     auto* color_scheme_menu_item = [[NSMenuItem alloc] initWithTitle:[color_scheme_menu title]
                                                               action:nil
                                                        keyEquivalent:@""];
     [color_scheme_menu_item setSubmenu:color_scheme_menu];
 
-    auto* contrast_menu = Ladybird::create_application_menu(WebView::Application::the().contrast_menu());
+    auto* contrast_menu = ImoogleBrowser::create_application_menu(WebView::Application::the().contrast_menu());
     auto* contrast_menu_item = [[NSMenuItem alloc] initWithTitle:[contrast_menu title]
                                                           action:nil
                                                    keyEquivalent:@""];
     [contrast_menu_item setSubmenu:contrast_menu];
 
-    auto* motion_menu = Ladybird::create_application_menu(WebView::Application::the().motion_menu());
+    auto* motion_menu = ImoogleBrowser::create_application_menu(WebView::Application::the().motion_menu());
     auto* motion_menu_item = [[NSMenuItem alloc] initWithTitle:[motion_menu title]
                                                         action:nil
                                                  keyEquivalent:@""];
@@ -342,7 +342,7 @@
     auto* submenu = [[NSMenu alloc] initWithTitle:@"History"];
     [submenu setAutoenablesItems:NO];
 
-    [submenu addItem:Ladybird::create_application_menu_item(WebView::Application::the().reload_action())];
+    [submenu addItem:ImoogleBrowser::create_application_menu_item(WebView::Application::the().reload_action())];
     [submenu addItem:[NSMenuItem separatorItem]];
 
     [submenu addItem:[[NSMenuItem alloc] initWithTitle:@"Clear History"
@@ -357,7 +357,7 @@
 {
     auto* menu = [[NSMenuItem alloc] init];
 
-    auto* submenu = Ladybird::create_application_menu(WebView::Application::the().inspect_menu());
+    auto* submenu = ImoogleBrowser::create_application_menu(WebView::Application::the().inspect_menu());
     [menu setSubmenu:submenu];
 
     return menu;
@@ -367,7 +367,7 @@
 {
     auto* menu = [[NSMenuItem alloc] init];
 
-    auto* submenu = Ladybird::create_application_menu(WebView::Application::the().debug_menu());
+    auto* submenu = ImoogleBrowser::create_application_menu(WebView::Application::the().debug_menu());
     [menu setSubmenu:submenu];
 
     return menu;

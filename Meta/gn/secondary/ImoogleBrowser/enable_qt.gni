@@ -1,0 +1,4 @@
+declare_args() {
+  # Build the Imoogle Browser application using the Qt UI.
+  enable_qt = current_os != "mac"
+}

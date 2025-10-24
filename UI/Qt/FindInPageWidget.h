@@ -15,7 +15,7 @@
 #include <QPushButton>
 #include <QWidget>
 
-namespace Ladybird {
+namespace ImoogleBrowser {
 
 class Tab;
 class WebContentView;

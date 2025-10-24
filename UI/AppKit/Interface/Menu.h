@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025, Tim Flynn <trflynn89@ladybird.org>
+ * Copyright (c) 2025, Tim Flynn <trflynn89@imooglebrowser.org>
  *
  * SPDX-License-Identifier: BSD-2-Clause
  */
@@ -11,12 +11,12 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class LadybirdWebView;
+@class ImoogleBrowserWebView;
 
-namespace Ladybird {
+namespace ImoogleBrowser {
 
 NSMenu* create_application_menu(WebView::Menu&);
-NSMenu* create_context_menu(LadybirdWebView*, WebView::Menu&);
+NSMenu* create_context_menu(ImoogleBrowserWebView*, WebView::Menu&);
 
 NSMenuItem* create_application_menu_item(WebView::Action&);
 NSButton* create_application_button(WebView::Action&);

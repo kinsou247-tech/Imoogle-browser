@@ -8,7 +8,7 @@
 #include <UI/Qt/AudioCodecPluginQt.h>
 #include <UI/Qt/AudioThread.h>
 
-namespace Ladybird {
+namespace ImoogleBrowser {
 
 ErrorOr<NonnullOwnPtr<AudioCodecPluginQt>> AudioCodecPluginQt::create(NonnullRefPtr<Audio::Loader> loader)
 {

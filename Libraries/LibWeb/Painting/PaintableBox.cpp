@@ -1,8 +1,8 @@
 /*
- * Copyright (c) 2022-2023, Andreas Kling <andreas@ladybird.org>
- * Copyright (c) 2022-2025, Sam Atkins <sam@ladybird.org>
+ * Copyright (c) 2022-2023, Andreas Kling <andreas@imooglebrowser.org>
+ * Copyright (c) 2022-2025, Sam Atkins <sam@imooglebrowser.org>
  * Copyright (c) 2024-2025, Aliaksandr Kalenik <kalenik.aliaksandr@gmail.com>
- * Copyright (c) 2025, Jelle Raaijmakers <jelle@ladybird.org>
+ * Copyright (c) 2025, Jelle Raaijmakers <jelle@imooglebrowser.org>
  *
  * SPDX-License-Identifier: BSD-2-Clause
  */
@@ -1096,7 +1096,7 @@ Paintable::DispatchEventOfSameName PaintableBox::handle_mousemove(Badge<EventHan
 void PaintableBox::handle_mouseleave(Badge<EventHandler>)
 {
     // FIXME: early return needed as MacOSX calls this even when user is pressing mouse button
-    // https://github.com/LadybirdBrowser/ladybird/issues/5844
+    // https://github.com/ImoogleBrowserBrowser/imooglebrowser/issues/5844
     if (m_scroll_thumb_dragging_direction.has_value())
         return;
 

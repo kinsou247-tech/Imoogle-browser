@@ -6,9 +6,9 @@ on:
     - cron: '0 0 * * *'
 
 env:
-  # runner.workspace = /home/runner/work/ladybird
-  # github.workspace = /home/runner/work/ladybird/ladybird
-  LADYBIRD_SOURCE_DIR: ${{ github.workspace }}
+  # runner.workspace = /home/runner/work/imooglebrowser
+  # github.workspace = /home/runner/work/imooglebrowser/imooglebrowser
+  IMOOGLE_BROWSER_SOURCE_DIR: ${{ github.workspace }}
   CCACHE_DIR: ${{ github.workspace }}/.ccache
   VCPKG_ROOT:  ${{ github.workspace }}/Build/vcpkg
 
@@ -19,7 +19,7 @@ concurrency:
 jobs:
   CI:
     runs-on: ${{ matrix.os }}
-    if: github.repository == 'LadybirdBrowser/ladybird'
+    if: github.repository == 'Imoogle BrowserBrowser/imooglebrowser'
     strategy:
       fail-fast: false
       matrix:
@@ -95,7 +95,7 @@ jobs:
         run: ./gradlew connectedAndroidTest
         env:
           GRADLE_OPTS: '-Xmx3072m'
-          LADYBIRD_CACHE_DIR: ${{ github.workspace }}/Build/caches
+          IMOOGLE_BROWSER_CACHE_DIR: ${{ github.workspace }}/Build/caches
 
       - name: Save Caches
         uses: ./.github/actions/cache-save

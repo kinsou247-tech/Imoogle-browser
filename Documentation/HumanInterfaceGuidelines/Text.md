@@ -1,8 +1,8 @@
-# Guidelines for user interface text in Ladybird
+# Guidelines for user interface text in Imoogle Browser
 
 ## Capitalization
 
-Ladybird employs two capitalization styles:
+Imoogle Browser employs two capitalization styles:
 
 - Book title capitalization
 - Sentence-style capitalization

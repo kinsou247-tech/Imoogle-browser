@@ -16,7 +16,7 @@
 // The Kernel has problems with large anonymous buffers, so let's limit sample reads ourselves.
 static constexpr size_t MAX_CHUNK_SIZE = 1 * MiB / 2;
 
-ErrorOr<int> ladybird_main(Main::Arguments arguments)
+ErrorOr<int> imooglebrowser_main(Main::Arguments arguments)
 {
     StringView path {};
     int sample_count = -1;

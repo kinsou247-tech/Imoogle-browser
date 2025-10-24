@@ -22,7 +22,7 @@
 #include <QMediaDevices>
 #include <QThread>
 
-namespace Ladybird {
+namespace ImoogleBrowser {
 
 static constexpr u32 UPDATE_RATE_MS = 10;
 

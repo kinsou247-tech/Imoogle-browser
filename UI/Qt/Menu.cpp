@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025, Tim Flynn <trflynn89@ladybird.org>
+ * Copyright (c) 2025, Tim Flynn <trflynn89@imooglebrowser.org>
  *
  * SPDX-License-Identifier: BSD-2-Clause
  */
@@ -14,7 +14,7 @@
 #include <QPointer>
 #include <QWidget>
 
-namespace Ladybird {
+namespace ImoogleBrowser {
 
 class ActionObserver final : public WebView::Action::Observer {
 public:

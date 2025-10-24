@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025, Tim Flynn <trflynn89@ladybird.org>
+ * Copyright (c) 2025, Tim Flynn <trflynn89@imooglebrowser.org>
  *
  * SPDX-License-Identifier: BSD-2-Clause
  */
@@ -59,7 +59,7 @@ static ErrorOr<JsonObject> read_settings_file(StringView settings_path)
     auto settings_json = TRY(JsonValue::from_string(settings_contents));
 
     if (!settings_json.is_object())
-        return Error::from_string_literal("Expected Ladybird settings to be a JSON object");
+        return Error::from_string_literal("Expected ImoogleBrowser settings to be a JSON object");
     return move(settings_json.as_object());
 }
 
@@ -76,15 +76,15 @@ static ErrorOr<void> write_settings_file(StringView settings_path, JsonValue con
 
 Settings Settings::create(Badge<Application>)
 {
-    // FIXME: Move this to a generic "Ladybird config directory" helper.
-    auto settings_directory = ByteString::formatted("{}/Ladybird", Core::StandardPaths::config_directory());
+    // FIXME: Move this to a generic "ImoogleBrowser config directory" helper.
+    auto settings_directory = ByteString::formatted("{}/ImoogleBrowser", Core::StandardPaths::config_directory());
     auto settings_path = ByteString::formatted("{}/Settings.json", settings_directory);
 
     Settings settings { move(settings_path) };
 
     auto settings_json = read_settings_file(settings.m_settings_path);
     if (settings_json.is_error()) {
-        warnln("Unable to read Ladybird settings: {}", settings_json.error());
+        warnln("Unable to read ImoogleBrowser settings: {}", settings_json.error());
         return settings;
     }
 
@@ -494,7 +494,7 @@ void Settings::persist_settings()
     auto settings = serialize_json();
 
     if (auto result = write_settings_file(m_settings_path, settings); result.is_error())
-        warnln("Unable to persist Ladybird settings: {}", result.error());
+        warnln("Unable to persist ImoogleBrowser settings: {}", result.error());
 }
 
 void Settings::add_observer(Badge<SettingsObserver>, SettingsObserver& observer)

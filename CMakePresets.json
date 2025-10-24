@@ -14,16 +14,16 @@
       "binaryDir": "${fileDir}/Build/release",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "RelWithDebInfo",
-        "LADYBIRD_CACHE_DIR": "${fileDir}/Build/caches",
+        "IMOOGLE_BROWSER_CACHE_DIR": "${fileDir}/Build/caches",
         "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
         "VCPKG_INSTALL_OPTIONS": "--no-print-usage",
         "VCPKG_OVERLAY_TRIPLETS": "${fileDir}/Meta/CMake/vcpkg/release-triplets"
       },
       "environment": {
-        "LADYBIRD_SOURCE_DIR": "${fileDir}",
+        "IMOOGLE_BROWSER_SOURCE_DIR": "${fileDir}",
         "VCPKG_ROOT": "${fileDir}/Build/vcpkg",
         "VCPKG_BINARY_SOURCES": "clear;files,${fileDir}/Build/caches/vcpkg-binary-cache,readwrite;$penv{VCPKG_BINARY_SOURCES}",
-        "X_VCPKG_ASSET_SOURCES": "clear;x-azurl,https://vcpkg-cache.app.ladybird.org/ladybird/source-assets/,$penv{VCPKG_CACHE_SAS},read$penv{VCPKG_CACHE_MODE}"
+        "X_VCPKG_ASSET_SOURCES": "clear;x-azurl,https://vcpkg-cache.app.imoogle-browser.org/imoogle-browser/source-assets/,$penv{VCPKG_CACHE_SAS},read$penv{VCPKG_CACHE_MODE}"
       },
       "vendor": {
         "jetbrains.com/clion": {
@@ -302,7 +302,7 @@
         "stopOnFailure": true
       },
       "environment": {
-        "LADYBIRD_SOURCE_DIR": "${fileDir}"
+        "IMOOGLE_BROWSER_SOURCE_DIR": "${fileDir}"
       }
     },
     {

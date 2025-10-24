@@ -3,4 +3,4 @@ set(SOURCES
     Generator.cpp
 )
 
-ladybird_lib(LibDiff diff)
+imooglebrowser_lib(LibDiff diff)

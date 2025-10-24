@@ -8,7 +8,7 @@
 #include <LibWeb/Platform/AudioCodecPlugin.h>
 #include <UI/Qt/AudioThread.h>
 
-namespace Ladybird {
+namespace ImoogleBrowser {
 
 struct AudioDevice {
     static AudioDevice create(Audio::Loader const& loader)

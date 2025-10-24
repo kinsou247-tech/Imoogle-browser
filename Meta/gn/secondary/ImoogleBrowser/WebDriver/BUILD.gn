@@ -1,0 +1,34 @@
+import("//ImoogleBrowser/link_qt.gni")
+
+executable("WebDriver") {
+  configs += [ "//ImoogleBrowser:imooglebrowser_config" ]
+  include_dirs = [
+    "//Userland/Services",
+    "//ImoogleBrowser",
+  ]
+  data_deps = [
+    "//ImoogleBrowser:headless-browser",
+    "//ImoogleBrowser:imooglebrowser_executable",
+  ]
+  deps = [
+    "//AK",
+    "//Userland/Libraries/LibCore",
+    "//Userland/Libraries/LibFileSystem",
+    "//Userland/Libraries/LibGfx",
+    "//Userland/Libraries/LibIPC",
+    "//Userland/Libraries/LibJS",
+    "//Userland/Libraries/LibMain",
+    "//Userland/Libraries/LibURL",
+    "//Userland/Libraries/LibWeb",
+    "//Userland/Libraries/LibWebSocket",
+    "//Userland/Libraries/LibWebView:WebDriverClientEndpoint",
+    "//Userland/Libraries/LibWebView:WebDriverServerEndpoint",
+  ]
+  sources = [
+    "//ImoogleBrowser/Utilities.cpp",
+    "//Userland/Services/WebDriver/Client.cpp",
+    "//Userland/Services/WebDriver/Session.cpp",
+    "//Userland/Services/WebDriver/WebContentConnection.cpp",
+    "main.cpp",
+  ]
+}

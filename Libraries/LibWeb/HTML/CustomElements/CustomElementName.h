@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2023, Srikavin Ramkumar <me@srikavin.me>
- * Copyright (c) 2025, Sam Atkins <sam@ladybird.org>
+ * Copyright (c) 2025, Sam Atkins <sam@imooglebrowser.org>
  *
  * SPDX-License-Identifier: BSD-2-Clause
  */

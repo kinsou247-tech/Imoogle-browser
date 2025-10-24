@@ -18,7 +18,7 @@ permissions:
 
 jobs:
   build:
-    if: github.repository == 'LadybirdBrowser/ladybird'
+    if: github.repository == 'Imoogle BrowserBrowser/imooglebrowser'
     runs-on: ubuntu-latest
     steps:
 
@@ -35,6 +35,6 @@ jobs:
       - name: Build Base Dev Container Image
         uses: devcontainers/ci@v0.3
         with:
-          imageName: ghcr.io/ladybirdbrowser/ladybird-devcontainer
+          imageName: ghcr.io/imooglebrowserbrowser/imooglebrowser-devcontainer
           imageTag: base,latest
           push: always

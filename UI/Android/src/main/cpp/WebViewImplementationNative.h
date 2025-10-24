@@ -10,7 +10,7 @@
 #include <android/bitmap.h>
 #include <jni.h>
 
-namespace Ladybird {
+namespace ImoogleBrowser {
 
 class WebViewImplementationNative : public WebView::ViewImplementation {
 public:

@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2018-2020, Andreas Kling <andreas@ladybird.org>
- * Copyright (c) 2025, Tim Ledbetter <tim.ledbetter@ladybird.org>
+ * Copyright (c) 2018-2020, Andreas Kling <andreas@imooglebrowser.org>
+ * Copyright (c) 2025, Tim Ledbetter <tim.ledbetter@imooglebrowser.org>
  *
  * SPDX-License-Identifier: BSD-2-Clause
  */

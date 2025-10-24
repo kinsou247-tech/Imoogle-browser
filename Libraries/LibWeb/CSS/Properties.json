@@ -3428,7 +3428,7 @@
   "scrollbar-gutter": {
     "affects-layout": false,
     "animation-type": "discrete",
-    "__comment": "This property should affect layout per-spec, but ladybird always uses overlay scrollbars so it doesn't in practice.",
+    "__comment": "This property should affect layout per-spec, but imooglebrowser always uses overlay scrollbars so it doesn't in practice.",
     "inherited": false,
     "initial": "auto"
   },
