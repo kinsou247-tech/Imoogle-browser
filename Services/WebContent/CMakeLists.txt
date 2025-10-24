@@ -14,10 +14,10 @@ set(SOURCES
 
 if (ANDROID)
     add_library(webcontentservice SHARED
-        ${LADYBIRD_SOURCE_DIR}/UI/Android/src/main/cpp/WebContentService.cpp
-        ${LADYBIRD_SOURCE_DIR}/UI/Android/src/main/cpp/WebContentServiceJNI.cpp
-        ${LADYBIRD_SOURCE_DIR}/UI/Android/src/main/cpp/LadybirdServiceBaseJNI.cpp
-        ${LADYBIRD_SOURCE_DIR}/UI/Android/src/main/cpp/JNIHelpers.cpp
+        ${IMOOGLE_BROWSER_SOURCE_DIR}/UI/Android/src/main/cpp/WebContentService.cpp
+        ${IMOOGLE_BROWSER_SOURCE_DIR}/UI/Android/src/main/cpp/WebContentServiceJNI.cpp
+        ${IMOOGLE_BROWSER_SOURCE_DIR}/UI/Android/src/main/cpp/ImoogleBrowserServiceBaseJNI.cpp
+        ${IMOOGLE_BROWSER_SOURCE_DIR}/UI/Android/src/main/cpp/JNIHelpers.cpp
         ${SOURCES}
     )
     target_link_libraries(webcontentservice PRIVATE android)
@@ -27,14 +27,14 @@ else()
 endif()
 
 target_include_directories(webcontentservice PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/../..>)
-target_include_directories(webcontentservice PUBLIC $<BUILD_INTERFACE:${LADYBIRD_SOURCE_DIR}>)
-target_include_directories(webcontentservice PUBLIC $<BUILD_INTERFACE:${LADYBIRD_SOURCE_DIR}/Services/>)
+target_include_directories(webcontentservice PUBLIC $<BUILD_INTERFACE:${IMOOGLE_BROWSER_SOURCE_DIR}>)
+target_include_directories(webcontentservice PUBLIC $<BUILD_INTERFACE:${IMOOGLE_BROWSER_SOURCE_DIR}/Services/>)
 
 target_link_libraries(webcontentservice PUBLIC LibCore LibCrypto LibFileSystem LibGfx LibIPC LibJS LibMain LibMedia LibWeb LibWebSocket LibRequests LibWebView LibImageDecoderClient LibGC)
 target_link_libraries(webcontentservice PRIVATE OpenSSL::Crypto OpenSSL::SSL)
 target_link_libraries(webcontentservice PRIVATE SDL3::SDL3)
 
-if (ENABLE_QT AND NOT DEFINED LADYBIRD_AUDIO_BACKEND)
+if (ENABLE_QT AND NOT DEFINED IMOOGLE_BROWSER_AUDIO_BACKEND)
     find_package(Qt6 REQUIRED COMPONENTS Multimedia)
 
     qt_add_executable(WebContent main.cpp)
@@ -42,8 +42,8 @@ if (ENABLE_QT AND NOT DEFINED LADYBIRD_AUDIO_BACKEND)
     target_compile_definitions(WebContent PRIVATE HAVE_QT=1)
 
     target_sources(WebContent PRIVATE
-        ${LADYBIRD_SOURCE_DIR}/UI/Qt/AudioCodecPluginQt.cpp
-        ${LADYBIRD_SOURCE_DIR}/UI/Qt/AudioThread.cpp
+        ${IMOOGLE_BROWSER_SOURCE_DIR}/UI/Qt/AudioCodecPluginQt.cpp
+        ${IMOOGLE_BROWSER_SOURCE_DIR}/UI/Qt/AudioThread.cpp
     )
     target_link_libraries(WebContent PRIVATE LibWebViewPlatform Qt::Multimedia)
     target_compile_definitions(WebContent PRIVATE HAVE_QT_MULTIMEDIA=1)
@@ -60,7 +60,7 @@ endif()
 
 
 target_sources(webcontentservice PUBLIC FILE_SET server TYPE HEADERS
-    BASE_DIRS ${LADYBIRD_SOURCE_DIR}/Services
+    BASE_DIRS ${IMOOGLE_BROWSER_SOURCE_DIR}/Services
     FILES ConnectionFromClient.h
           ConsoleGlobalEnvironmentExtensions.h
           Forward.h

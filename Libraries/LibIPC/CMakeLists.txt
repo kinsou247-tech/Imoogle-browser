@@ -16,5 +16,5 @@ else()
         TransportSocketWindows.cpp)
 endif()
 
-ladybird_lib(LibIPC ipc)
+imooglebrowser_lib(LibIPC ipc)
 target_link_libraries(LibIPC PRIVATE LibCore LibURL LibThreading)

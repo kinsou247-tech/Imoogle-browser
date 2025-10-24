@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2024, Andrew Kaster <andrew@ladybird.org>
- * Copyright (c) 2025, Luke Wilde <luke@ladybird.org>
+ * Copyright (c) 2024, Andrew Kaster <andrew@imooglebrowser.org>
+ * Copyright (c) 2025, Luke Wilde <luke@imooglebrowser.org>
  *
  * SPDX-License-Identifier: BSD-2-Clause
  */

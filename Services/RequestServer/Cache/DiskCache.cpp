@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025, Tim Flynn <trflynn89@ladybird.org>
+ * Copyright (c) 2025, Tim Flynn <trflynn89@imooglebrowser.org>
  *
  * SPDX-License-Identifier: BSD-2-Clause
  */
@@ -17,7 +17,7 @@ static constexpr auto INDEX_DATABASE = "INDEX"sv;
 
 ErrorOr<DiskCache> DiskCache::create()
 {
-    auto cache_directory = LexicalPath::join(Core::StandardPaths::cache_directory(), "Ladybird"sv, "Cache"sv);
+    auto cache_directory = LexicalPath::join(Core::StandardPaths::cache_directory(), "ImoogleBrowser"sv, "Cache"sv);
 
     auto database = TRY(Database::Database::create(cache_directory.string(), INDEX_DATABASE));
     auto index = TRY(CacheIndex::create(database));

@@ -1,9 +1,9 @@
 #!/bin/sh
-# Prebuild ladybird's vcpkg dependencies
+# Prebuild imooglebrowser's vcpkg dependencies
 set -e
 
 # FIXME: Add some options to make this more flexible and usable by other projects
-# FIXME: Find a way to do this without cloning ladybird
+# FIXME: Find a way to do this without cloning imooglebrowser
 
 case "$(uname -m)" in
     x86_64|x64)
@@ -23,9 +23,9 @@ cd /tmp
 CACHE_DIR=/usr/local/share/vcpkg-binary-cache
 mkdir -p ${CACHE_DIR}
 
-# Clone ladybird to get access to vcpkg.json and vcpkg commit id
-git clone https://github.com/LadybirdBrowser/ladybird.git --depth 1
-cd ladybird
+# Clone imooglebrowser to get access to vcpkg.json and vcpkg commit id
+git clone https://github.com/ImoogleBrowserBrowser/imooglebrowser.git --depth 1
+cd imooglebrowser
 # Grab and bootstrap the exact commit of vcpkg that trunk is using
 python3 ./Toolchain/BuildVcpkg.py
 
@@ -33,7 +33,7 @@ python3 ./Toolchain/BuildVcpkg.py
 # Set the binary cache directory to the one we intend to use at container runtime
 export VCPKG_ROOT="${PWD}/Build/vcpkg"
 export VCPKG_BINARY_SOURCES="clear;files,${CACHE_DIR},readwrite"
-export X_VCPKG_ASSET_SOURCES="clear;x-azurl,https://vcpkg-cache.app.ladybird.org/ladybird/source-assets/,,read"
+export X_VCPKG_ASSET_SOURCES="clear;x-azurl,https://vcpkg-cache.app.imooglebrowser.org/imooglebrowser/source-assets/,,read"
 
 # Check options to see which versions we should build
 if [ "${RELEASE_TRIPLET}" = "true" ]; then
@@ -50,4 +50,4 @@ fi
 
 # Clean up to reduce layer size
 cd /tmp
-rm -rf ladybird
+rm -rf imooglebrowser

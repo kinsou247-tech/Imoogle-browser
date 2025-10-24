@@ -10,11 +10,11 @@
 #include <UI/Qt/Settings.h>
 #include <UI/Qt/StringUtils.h>
 
-namespace Ladybird {
+namespace ImoogleBrowser {
 
 Settings::Settings()
 {
-    m_qsettings = make<QSettings>(QSettings::IniFormat, QSettings::UserScope, "Ladybird", "Ladybird", this);
+    m_qsettings = make<QSettings>(QSettings::IniFormat, QSettings::UserScope, "ImoogleBrowser", "ImoogleBrowser", this);
 }
 
 ByteString Settings::directory()

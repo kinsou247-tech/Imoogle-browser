@@ -22,7 +22,7 @@ else()
         System.cpp)
 endif()
 
-ladybird_lib(LibCoreMinimal coreminimal)
+imooglebrowser_lib(LibCoreMinimal coreminimal)
 
 if (WIN32)
     find_path(DIRENT_INCLUDE_DIR dirent.h REQUIRED)
@@ -112,7 +112,7 @@ if (APPLE)
     list(APPEND SOURCES IOSurface.cpp)
 endif()
 
-ladybird_lib(LibCore core)
+imooglebrowser_lib(LibCore core)
 target_link_libraries(LibCore PRIVATE LibUnicode LibURL Threads::Threads)
 target_link_libraries(LibCore PUBLIC LibCoreMinimal)
 

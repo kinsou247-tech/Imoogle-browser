@@ -1,22 +1,22 @@
 include(cmake/ResourceFiles.cmake)
 
-function(create_ladybird_bundle target_name)
+function(create_imooglebrowser_bundle target_name)
     set_target_properties(${target_name} PROPERTIES
-        OUTPUT_NAME "Ladybird"
-        MACOSX_BUNDLE_GUI_IDENTIFIER org.ladybird.Ladybird
+        OUTPUT_NAME "ImoogleBrowser"
+        MACOSX_BUNDLE_GUI_IDENTIFIER org.imooglebrowser.ImoogleBrowser
         MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
         MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
-        MACOSX_BUNDLE_INFO_PLIST "${LADYBIRD_SOURCE_DIR}/UI/Info.plist"
+        MACOSX_BUNDLE_INFO_PLIST "${IMOOGLE_BROWSER_SOURCE_DIR}/UI/Info.plist"
         MACOSX_BUNDLE TRUE
         WIN32_EXECUTABLE TRUE
-        XCODE_ATTRIBUTE_PRODUCT_BUNDLE_IDENTIFIER org.ladybird.Ladybird
+        XCODE_ATTRIBUTE_PRODUCT_BUNDLE_IDENTIFIER org.imooglebrowser.ImoogleBrowser
     )
 
     if (APPLE)
         set(bundle_dir "$<TARGET_BUNDLE_DIR:${target_name}>")
         add_custom_command(TARGET ${target_name} POST_BUILD
             COMMAND "${CMAKE_COMMAND}" -E make_directory "${bundle_dir}/Contents/Resources"
-            COMMAND "iconutil" --convert icns "${LADYBIRD_SOURCE_DIR}/UI/Icons/macos/app_icon.iconset" --output "${bundle_dir}/Contents/Resources/app_icon.icns"
+            COMMAND "iconutil" --convert icns "${IMOOGLE_BROWSER_SOURCE_DIR}/UI/Icons/macos/app_icon.iconset" --output "${bundle_dir}/Contents/Resources/app_icon.icns"
         )
 
         # Note: This symlink is removed in the install commands
@@ -27,11 +27,11 @@ function(create_ladybird_bundle target_name)
 
         if (NOT CMAKE_BUILD_TYPE MATCHES "Release|RelWithDebInfo" AND "arm64" IN_LIST CMAKE_OSX_ARCHITECTURES)
             add_custom_command(TARGET ${target_name} POST_BUILD
-                COMMAND codesign -s - -v -f --entitlements "${LADYBIRD_SOURCE_DIR}/Meta/debug.plist" "${bundle_dir}"
+                COMMAND codesign -s - -v -f --entitlements "${IMOOGLE_BROWSER_SOURCE_DIR}/Meta/debug.plist" "${bundle_dir}"
             )
         else()
             add_custom_target(apply-debug-entitlements
-                COMMAND codesign -s - -v -f --entitlements "${LADYBIRD_SOURCE_DIR}/Meta/debug.plist" "${bundle_dir}"
+                COMMAND codesign -s - -v -f --entitlements "${IMOOGLE_BROWSER_SOURCE_DIR}/Meta/debug.plist" "${bundle_dir}"
                 USES_TERMINAL
             )
         endif()
@@ -58,65 +58,65 @@ else()
     return()
 endif()
 
-if (NOT TARGET ladybird)
-    message(FATAL_ERROR "UI Framework selection must declare a ladybird target")
+if (NOT TARGET imooglebrowser)
+    message(FATAL_ERROR "UI Framework selection must declare a imooglebrowser target")
 endif()
 
-if (TARGET ladybird_impl)
-    set(LADYBIRD_TARGET ladybird_impl PUBLIC)
+if (TARGET imooglebrowser_impl)
+    set(IMOOGLE_BROWSER_TARGET imooglebrowser_impl PUBLIC)
 else()
-    set(LADYBIRD_TARGET ladybird PRIVATE)
+    set(IMOOGLE_BROWSER_TARGET imooglebrowser PRIVATE)
 endif()
 
-set(LADYBIRD_LIBS AK LibCore LibFileSystem LibGfx LibImageDecoderClient LibIPC LibJS LibMain LibWeb LibWebView LibWebViewPlatform LibRequests LibURL)
-target_link_libraries(${LADYBIRD_TARGET} PRIVATE ${LADYBIRD_LIBS})
-target_link_libraries(${LADYBIRD_TARGET} PRIVATE OpenSSL::Crypto OpenSSL::SSL)
+set(IMOOGLE_BROWSER_LIBS AK LibCore LibFileSystem LibGfx LibImageDecoderClient LibIPC LibJS LibMain LibWeb LibWebView LibWebViewPlatform LibRequests LibURL)
+target_link_libraries(${IMOOGLE_BROWSER_TARGET} PRIVATE ${IMOOGLE_BROWSER_LIBS})
+target_link_libraries(${IMOOGLE_BROWSER_TARGET} PRIVATE OpenSSL::Crypto OpenSSL::SSL)
 
-target_include_directories(${LADYBIRD_TARGET} ${CMAKE_CURRENT_BINARY_DIR})
-target_include_directories(${LADYBIRD_TARGET} ${LADYBIRD_SOURCE_DIR})
-target_include_directories(${LADYBIRD_TARGET} ${LADYBIRD_SOURCE_DIR}/Services/)
+target_include_directories(${IMOOGLE_BROWSER_TARGET} ${CMAKE_CURRENT_BINARY_DIR})
+target_include_directories(${IMOOGLE_BROWSER_TARGET} ${IMOOGLE_BROWSER_SOURCE_DIR})
+target_include_directories(${IMOOGLE_BROWSER_TARGET} ${IMOOGLE_BROWSER_SOURCE_DIR}/Services/)
 
 if(WIN32)
-    target_link_libraries(${LADYBIRD_TARGET} LibDevTools)
+    target_link_libraries(${IMOOGLE_BROWSER_TARGET} LibDevTools)
 endif()
 
 function(set_helper_process_properties)
     set(targets ${ARGV})
     if (APPLE)
         # Store helper processes in the same bundle directory as the main application
-        set_target_properties(${targets} PROPERTIES RUNTIME_OUTPUT_DIRECTORY "$<TARGET_FILE_DIR:ladybird>")
+        set_target_properties(${targets} PROPERTIES RUNTIME_OUTPUT_DIRECTORY "$<TARGET_FILE_DIR:imooglebrowser>")
     else()
         set_target_properties(${targets} PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/${IN_BUILD_PREFIX}${CMAKE_INSTALL_LIBEXECDIR}")
     endif()
 endfunction()
 
 add_custom_target(run
-    COMMAND "${CMAKE_COMMAND}" -E env "LADYBIRD_SOURCE_DIR=${LADYBIRD_SOURCE_DIR}" "$<TARGET_FILE:ladybird>" $ENV{LAGOM_ARGS}
+    COMMAND "${CMAKE_COMMAND}" -E env "IMOOGLE_BROWSER_SOURCE_DIR=${IMOOGLE_BROWSER_SOURCE_DIR}" "$<TARGET_FILE:imooglebrowser>" $ENV{LAGOM_ARGS}
     USES_TERMINAL
     VERBATIM
 )
 
 if (APPLE)
-    add_custom_target(debug-ladybird
-        COMMAND "${CMAKE_COMMAND}" -E env "LADYBIRD_SOURCE_DIR=${LADYBIRD_SOURCE_DIR}" lldb "$<TARGET_BUNDLE_DIR:ladybird>"
+    add_custom_target(debug-imooglebrowser
+        COMMAND "${CMAKE_COMMAND}" -E env "IMOOGLE_BROWSER_SOURCE_DIR=${IMOOGLE_BROWSER_SOURCE_DIR}" lldb "$<TARGET_BUNDLE_DIR:imooglebrowser>"
         USES_TERMINAL
     )
 else()
-    add_custom_target(debug-ladybird
-        COMMAND "${CMAKE_COMMAND}" -E env "LADYBIRD_SOURCE_DIR=${LADYBIRD_SOURCE_DIR}" gdb "$<TARGET_FILE:ladybird>"
+    add_custom_target(debug-imooglebrowser
+        COMMAND "${CMAKE_COMMAND}" -E env "IMOOGLE_BROWSER_SOURCE_DIR=${IMOOGLE_BROWSER_SOURCE_DIR}" gdb "$<TARGET_FILE:imooglebrowser>"
         USES_TERMINAL
     )
 endif()
 
-set(ladybird_helper_processes ImageDecoder RequestServer WebContent WebWorker)
+set(imooglebrowser_helper_processes ImageDecoder RequestServer WebContent WebWorker)
 
-add_dependencies(ladybird ${ladybird_helper_processes})
+add_dependencies(imooglebrowser ${imooglebrowser_helper_processes})
 # FIXME: Increase support for building targets on Windows
 if (NOT WIN32)
-    add_dependencies(WebDriver ladybird)
+    add_dependencies(WebDriver imooglebrowser)
 endif()
 
-set_helper_process_properties(${ladybird_helper_processes})
+set_helper_process_properties(${imooglebrowser_helper_processes})
 if (APPLE)
     set_helper_process_properties(WebDriver)
 endif()

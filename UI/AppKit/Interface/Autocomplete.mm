@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025, Tim Flynn <trflynn89@ladybird.org>
+ * Copyright (c) 2025, Tim Flynn <trflynn89@imooglebrowser.org>
  *
  * SPDX-License-Identifier: BSD-2-Clause
  */
@@ -196,7 +196,7 @@ static constexpr auto POPOVER_PADDING = 6uz;
         [view setIdentifier:AUTOCOMPLETE_IDENTIFIER];
     }
 
-    [view.textField setStringValue:Ladybird::string_to_ns_string(m_suggestions[row])];
+    [view.textField setStringValue:ImoogleBrowser::string_to_ns_string(m_suggestions[row])];
     return view;
 }
 

@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2018-2021, Andreas Kling <andreas@ladybird.org>
- * Copyright (c) 2023-2025, Tim Flynn <trflynn89@ladybird.org>
+ * Copyright (c) 2018-2021, Andreas Kling <andreas@imooglebrowser.org>
+ * Copyright (c) 2023-2025, Tim Flynn <trflynn89@imooglebrowser.org>
  *
  * SPDX-License-Identifier: BSD-2-Clause
  */

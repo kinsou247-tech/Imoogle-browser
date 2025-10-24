@@ -2,13 +2,13 @@ blank_issues_enabled: true
 contact_links:
   - name: Join our Discord server
     url: https://discord.gg/nvfjVJ4Svh
-    about: Chat with the Ladybird maintainers and contributors and other users.
+    about: Chat with the Imoogle Browser maintainers and contributors and other users.
   - name: Read our FAQ
-    url: https://github.com/LadybirdBrowser/ladybird/blob/master/Documentation/FAQ.md
-    about: Read answers for some of the most frequently-asked questions about Ladybird.
+    url: https://github.com/Imoogle BrowserBrowser/imooglebrowser/blob/master/Documentation/FAQ.md
+    about: Read answers for some of the most frequently-asked questions about Imoogle Browser.
   - name: Read our documentation
-    url: https://github.com/LadybirdBrowser/ladybird/blob/master/Documentation/README.md
-    about: Read the docs about building Ladybird, and about configuring your Ladybird development environment.
-  - name: Contribute to Ladybird
-    url: https://github.com/LadybirdBrowser/ladybird/blob/master/CONTRIBUTING.md
-    about: Read about how you can get started contributing to Ladybird.
+    url: https://github.com/Imoogle BrowserBrowser/imooglebrowser/blob/master/Documentation/README.md
+    about: Read the docs about building Imoogle Browser, and about configuring your Imoogle Browser development environment.
+  - name: Contribute to Imoogle Browser
+    url: https://github.com/Imoogle BrowserBrowser/imooglebrowser/blob/master/CONTRIBUTING.md
+    about: Read about how you can get started contributing to Imoogle Browser.

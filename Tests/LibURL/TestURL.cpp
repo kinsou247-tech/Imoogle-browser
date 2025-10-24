@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018-2022, Andreas Kling <andreas@ladybird.org>
+ * Copyright (c) 2018-2022, Andreas Kling <andreas@imooglebrowser.org>
  * Copyright (c) 2021, the SerenityOS developers.
  *
  * SPDX-License-Identifier: BSD-2-Clause
@@ -636,9 +636,9 @@ TEST_CASE(get_registrable_domain)
         EXPECT(!domain.has_value());
     }
     {
-        auto domain = URL::get_registrable_domain("ladybird.github.io"sv);
+        auto domain = URL::get_registrable_domain("imooglebrowser.github.io"sv);
         VERIFY(domain.has_value());
-        EXPECT_EQ(*domain, "ladybird.github.io"sv);
+        EXPECT_EQ(*domain, "imooglebrowser.github.io"sv);
     }
 }
 
@@ -695,9 +695,9 @@ TEST_CASE(same_site)
     auto opaque_origin = URL::Origin::create_opaque();
     auto second_opaque_origin = URL::Origin::create_opaque();
 
-    auto site1_https_url = URL::Parser::basic_parse("https://www.ladybird.org"sv).value();
-    auto site1_https_second_url = URL::Parser::basic_parse("https://www.ladybird.org/some/file/path"sv).value();
-    auto site1_http_url = URL::Parser::basic_parse("http://www.ladybird.org"sv).value();
+    auto site1_https_url = URL::Parser::basic_parse("https://www.imooglebrowser.org"sv).value();
+    auto site1_https_second_url = URL::Parser::basic_parse("https://www.imooglebrowser.org/some/file/path"sv).value();
+    auto site1_http_url = URL::Parser::basic_parse("http://www.imooglebrowser.org"sv).value();
 
     auto site2_https_url = URL::Parser::basic_parse("https://www.serenityos.org"sv).value();
 

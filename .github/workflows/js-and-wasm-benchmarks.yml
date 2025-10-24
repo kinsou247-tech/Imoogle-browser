@@ -9,7 +9,7 @@ on:
 jobs:
   js-benchmarks:
     runs-on: ${{ fromJSON(matrix.runner_labels) }}
-    if: ${{ github.repository == 'LadybirdBrowser/ladybird' && github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.repository == 'Imoogle BrowserBrowser/imooglebrowser' && github.event.workflow_run.conclusion == 'success' }}
     name: ${{ matrix.os_name }}, ${{ matrix.arch }}
 
     strategy:
@@ -31,10 +31,10 @@ jobs:
       contents: read
 
     steps:
-      - name: 'Checkout LadybirdBrowser/js-benchmarks'
+      - name: 'Checkout Imoogle BrowserBrowser/js-benchmarks'
         uses: actions/checkout@v5
         with:
-          repository: LadybirdBrowser/js-benchmarks
+          repository: Imoogle BrowserBrowser/js-benchmarks
           path: js-benchmarks
           ref: master
 
@@ -56,14 +56,14 @@ jobs:
         uses: dawidd6/action-download-artifact@v11
         with:
           run_id: ${{ github.event.workflow_run.id }}
-          name: ladybird-js-${{ matrix.package_type }}
+          name: imooglebrowser-js-${{ matrix.package_type }}
           path: js-repl
 
       - name: 'Extract JS repl'
         shell: bash
         run: |
           cd js-repl
-          tar -xvzf ladybird-js-${{ matrix.os_name }}-${{ matrix.arch }}.tar.gz
+          tar -xvzf imooglebrowser-js-${{ matrix.os_name }}-${{ matrix.arch }}.tar.gz
 
       - name: 'Determine JS repl build commit hash'
         id: js-build-commit
@@ -76,7 +76,7 @@ jobs:
         uses: dawidd6/action-download-artifact@v11
         with:
           run_id: ${{ github.event.workflow_run.id }}
-          name: ladybird-wasm-${{ matrix.package_type }}
+          name: imooglebrowser-wasm-${{ matrix.package_type }}
           path: wasm-repl
           if_no_artifact_found: warn
 
@@ -85,7 +85,7 @@ jobs:
         shell: bash
         run: |
           cd wasm-repl
-          tar -xvzf ladybird-wasm-${{ matrix.os_name }}-${{ matrix.arch }}.tar.gz
+          tar -xvzf imooglebrowser-wasm-${{ matrix.os_name }}-${{ matrix.arch }}.tar.gz
 
       - name: 'Run the benchmarks'
         shell: bash

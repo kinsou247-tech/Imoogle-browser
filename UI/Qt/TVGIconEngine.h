@@ -13,7 +13,7 @@
 
 #include <QIconEngine>
 
-namespace Ladybird {
+namespace ImoogleBrowser {
 
 class TVGIconEngine : public QIconEngine {
 public:

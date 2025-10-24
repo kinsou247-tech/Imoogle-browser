@@ -6,5 +6,5 @@ set(SOURCES
     XtermSuggestionDisplay.cpp
 )
 
-ladybird_lib(LibLine line)
+imooglebrowser_lib(LibLine line)
 target_link_libraries(LibLine PRIVATE LibCore LibUnicode)

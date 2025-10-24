@@ -16,7 +16,7 @@
 #include <QTextLayout>
 #include <QTimer>
 
-namespace Ladybird {
+namespace ImoogleBrowser {
 
 LocationEdit::LocationEdit(QWidget* parent)
     : QLineEdit(parent)

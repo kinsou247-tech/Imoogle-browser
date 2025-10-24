@@ -14,7 +14,7 @@
 
 #include <QObject>
 
-namespace Ladybird {
+namespace ImoogleBrowser {
 
 class AudioThread;
 

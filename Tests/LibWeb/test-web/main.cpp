@@ -1,9 +1,9 @@
 /*
  * Copyright (c) 2022, Dex♪ <dexes.ttp@gmail.com>
- * Copyright (c) 2023-2025, Tim Flynn <trflynn89@ladybird.org>
- * Copyright (c) 2023, Andreas Kling <andreas@ladybird.org>
- * Copyright (c) 2023-2024, Sam Atkins <sam@ladybird.org>
- * Copyright (c) 2025, Jelle Raaijmakers <jelle@ladybird.org>
+ * Copyright (c) 2023-2025, Tim Flynn <trflynn89@imooglebrowser.org>
+ * Copyright (c) 2023, Andreas Kling <andreas@imooglebrowser.org>
+ * Copyright (c) 2023-2024, Sam Atkins <sam@imooglebrowser.org>
+ * Copyright (c) 2025, Jelle Raaijmakers <jelle@imooglebrowser.org>
  *
  * SPDX-License-Identifier: BSD-2-Clause
  */
@@ -820,10 +820,10 @@ static void handle_signal(int signal)
 
 }
 
-ErrorOr<int> ladybird_main(Main::Arguments arguments)
+ErrorOr<int> imooglebrowser_main(Main::Arguments arguments)
 {
-#if defined(LADYBIRD_BINARY_PATH)
-    auto app = TRY(TestWeb::Application::create(arguments, LADYBIRD_BINARY_PATH));
+#if defined(IMOOGLE_BROWSER_BINARY_PATH)
+    auto app = TRY(TestWeb::Application::create(arguments, IMOOGLE_BROWSER_BINARY_PATH));
 #else
     auto app = TRY(TestWeb::Application::create(arguments, OptionalNone {}));
 #endif
@@ -831,7 +831,7 @@ ErrorOr<int> ladybird_main(Main::Arguments arguments)
     Core::EventLoop::register_signal(SIGINT, TestWeb::handle_signal);
     Core::EventLoop::register_signal(SIGTERM, TestWeb::handle_signal);
 
-    auto theme_path = LexicalPath::join(WebView::s_ladybird_resource_root, "themes"sv, "Default.ini"sv);
+    auto theme_path = LexicalPath::join(WebView::s_imooglebrowser_resource_root, "themes"sv, "Default.ini"sv);
     auto theme = TRY(Gfx::load_system_theme(theme_path.string()));
 
     auto const& browser_options = TestWeb::Application::browser_options();

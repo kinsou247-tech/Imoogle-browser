@@ -1,9 +1,9 @@
 {
-    "name": "Caches Ladybird's vcpkg dependencies",
+    "name": "Caches ImoogleBrowser's vcpkg dependencies",
     "id": "vcpkg-cache",
     "version": "1.0.0",
-    "description": "Create a prebuilt vcpkg binary cache for Ladybird developer use",
-    "installsAfter": [ "./features/ladybird" ],
+    "description": "Create a prebuilt vcpkg binary cache for ImoogleBrowser developer use",
+    "installsAfter": [ "./features/imooglebrowser" ],
     "containerEnv": {
         "VCPKG_BINARY_SOURCES": ";files,/usr/local/share/vcpkg-binary-cache,read"
     },

@@ -1,2 +1,2 @@
-d1 contents: "foo<a href="https://ladybird.org">bar</a>"
-d2 contents: "<a href="https://ladybird.org">ladybird</a>"
+d1 contents: "foo<a href="https://imooglebrowser.org">bar</a>"
+d2 contents: "<a href="https://imooglebrowser.org">imooglebrowser</a>"

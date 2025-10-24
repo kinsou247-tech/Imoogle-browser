@@ -27,5 +27,5 @@ set(SOURCES
     DevToolsServer.cpp
 )
 
-ladybird_lib(LibDevTools devtools EXPLICIT_SYMBOL_EXPORT)
+imooglebrowser_lib(LibDevTools devtools EXPLICIT_SYMBOL_EXPORT)
 target_link_libraries(LibDevTools PRIVATE LibCore LibWeb)

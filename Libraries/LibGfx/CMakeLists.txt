@@ -79,7 +79,7 @@ if (HAS_FONTCONFIG)
     list(APPEND SOURCES Font/GlobalFontConfig.cpp)
 endif()
 
-ladybird_lib(LibGfx gfx)
+imooglebrowser_lib(LibGfx gfx)
 
 target_link_libraries(LibGfx PRIVATE LibCompress LibCore LibCrypto LibFileSystem LibTextCodec LibIPC LibUnicode)
 
@@ -96,7 +96,7 @@ add_custom_command(
 )
 target_sources(LibGfx PRIVATE ${generated_sources})
 add_custom_target(generate_tiff_files_handler DEPENDS ${generated_sources})
-add_dependencies(ladybird_codegen_accumulator generate_tiff_files_handler)
+add_dependencies(imooglebrowser_codegen_accumulator generate_tiff_files_handler)
 add_dependencies(LibGfx generate_tiff_files_handler)
 
 set(generated_headers ${generated_sources})
@@ -143,7 +143,7 @@ if (NOT ANDROID)
     pkg_check_modules(Jxl REQUIRED IMPORTED_TARGET libjxl)
     if (WIN32)
         # FIXME: Build vcpkg libraries with clang-cl so they can also build in sanitize.
-        # https://github.com/LadybirdBrowser/ladybird/issues/5224
+        # https://github.com/ImoogleBrowserBrowser/imooglebrowser/issues/5224
         if (ENABLE_WINDOWS_CI)
             # We have to disable ASAN for the full target as fixing the issue in the initial SkiaBackendContext.cpp TU
             #  alone causes transitive issues in other TUs that depend on it

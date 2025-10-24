@@ -1,7 +1,7 @@
 /*
- * Copyright (c) 2019-2021, Andreas Kling <andreas@ladybird.org>
- * Copyright (c) 2022-2025, Sam Atkins <sam@ladybird.org>
- * Copyright (c) 2024, Luke Wilde <luke@ladybird.org>
+ * Copyright (c) 2019-2021, Andreas Kling <andreas@imooglebrowser.org>
+ * Copyright (c) 2022-2025, Sam Atkins <sam@imooglebrowser.org>
+ * Copyright (c) 2024, Luke Wilde <luke@imooglebrowser.org>
  *
  * SPDX-License-Identifier: BSD-2-Clause
  */

@@ -22,7 +22,7 @@ enum class OutputState {
 };
 
 // This class implements high-level audio playback behavior. It is primarily intended as an abstract cross-platform
-// interface to be used by Ladybird (and its dependent libraries) for playback.
+// interface to be used by ImoogleBrowser (and its dependent libraries) for playback.
 //
 // The interface is designed to be simple and robust. All control functions can be called safely from any thread.
 // Timing information provided by the class should allow audio timestamps to be tracked with the best accuracy possible.

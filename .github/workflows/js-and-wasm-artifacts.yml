@@ -11,14 +11,14 @@ on:
         type: string
 
 env:
-  LADYBIRD_SOURCE_DIR: ${{ github.workspace }}
+  IMOOGLE_BROWSER_SOURCE_DIR: ${{ github.workspace }}
   CCACHE_DIR: ${{ github.workspace }}/.ccache
   VCPKG_ROOT:  ${{ github.workspace }}/Build/vcpkg
 
 jobs:
   build-and-package:
     runs-on: ${{ fromJSON(matrix.runner_labels) }}
-    if: github.repository == 'LadybirdBrowser/ladybird'
+    if: github.repository == 'Imoogle BrowserBrowser/imooglebrowser'
     name: ${{ matrix.os_name }}, ${{ matrix.arch }}
 
     strategy:
@@ -44,7 +44,7 @@ jobs:
             runner_labels: '["blacksmith-8vcpu-ubuntu-2404-arm"]'
 
     steps:
-      - name: Checkout LadybirdBrowser/ladybird
+      - name: Checkout Imoogle BrowserBrowser/imooglebrowser
         uses: actions/checkout@v5
         with:
           ref: ${{ inputs.reference_to_build }}
@@ -116,7 +116,7 @@ jobs:
           cpack
 
           # Inject the COMMIT file for older builds (before commit 5c5de0e30e04).
-          for package in ladybird-*.tar.gz; do
+          for package in imooglebrowser-*.tar.gz; do
             if ! tar -tzf "${package}" | grep -qx COMMIT; then
               echo "${{ steps.build-commit.outputs.sha }}" > COMMIT
               gunzip "${package}"
@@ -139,7 +139,7 @@ jobs:
       - name: Sanity-check the js repl
         shell: bash
         run: |
-          path="Build/distribution/ladybird-js-${{ matrix.package_type }}.tar.gz"
+          path="Build/distribution/imooglebrowser-js-${{ matrix.package_type }}.tar.gz"
           if [ -f "${path}" ]; then
             tar -xvzf "${path}"
             bin/js -c "console.log('Hello, World\!');" > js-repl-out.txt
@@ -152,7 +152,7 @@ jobs:
       - name: Sanity-check the wasm repl
         shell: bash
         run: |
-          path="Build/distribution/ladybird-wasm-${{ matrix.package_type }}.tar.gz"
+          path="Build/distribution/imooglebrowser-wasm-${{ matrix.package_type }}.tar.gz"
           if [ -f "${path}" ]; then
             tar -xvzf "${path}"
             bin/wasm -e run_sanity_check -w ${{ github.workspace }}/Libraries/LibWasm/Tests/CI/ci-sanity-check.wasm > wasm-repl-out.txt
@@ -165,13 +165,13 @@ jobs:
       - name: Upload js package
         uses: actions/upload-artifact@v4
         with:
-          name: ladybird-js-${{ matrix.package_type }}
-          path: Build/distribution/ladybird-js-*.tar.gz
+          name: imooglebrowser-js-${{ matrix.package_type }}
+          path: Build/distribution/imooglebrowser-js-*.tar.gz
           retention-days: 7
 
       - name: Upload wasm package
         uses: actions/upload-artifact@v4
         with:
-          name: ladybird-wasm-${{ matrix.package_type }}
-          path: Build/distribution/ladybird-wasm-*.tar.gz
+          name: imooglebrowser-wasm-${{ matrix.package_type }}
+          path: Build/distribution/imooglebrowser-wasm-*.tar.gz
           retention-days: 7

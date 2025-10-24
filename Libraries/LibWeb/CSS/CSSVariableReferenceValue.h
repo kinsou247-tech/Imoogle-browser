@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025, Sam Atkins <sam@ladybird.org>
+ * Copyright (c) 2025, Sam Atkins <sam@imooglebrowser.org>
  *
  * SPDX-License-Identifier: BSD-2-Clause
  */

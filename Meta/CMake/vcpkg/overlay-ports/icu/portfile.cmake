@@ -36,7 +36,7 @@ vcpkg_extract_source_archive(SOURCE_PATH
         fix-win-build.patch
         vcpkg-cross-data.patch
         darwin-rpath.patch
-        ladybird-remove-autoconf272.patch # Reverts https://github.com/unicode-org/icu/commit/b542ae9d9123231d89ab0694e5809c9dfa45c8f7
+        imooglebrowser-remove-autoconf272.patch # Reverts https://github.com/unicode-org/icu/commit/b542ae9d9123231d89ab0694e5809c9dfa45c8f7
 )
 
 vcpkg_find_acquire_program(PYTHON3)

@@ -1,11 +1,11 @@
-# Ladybird Documentation
+# Imoogle Browser Documentation
 
-Ladybird development moves quickly, so some of these might be out of date. Please let us know if something here is wrong,
+Imoogle Browser development moves quickly, so some of these might be out of date. Please let us know if something here is wrong,
 or submit a PR with any additions or corrections! If you have any questions that are not answered here or in the [FAQ](FAQ.md),
 you are welcome to ask on [Discord](../README.md#get-in-touch-and-participate).
 
 ## Building and Running
-* [Build Instructions](BuildInstructionsLadybird.md)
+* [Build Instructions](BuildInstructionsImoogle Browser.md)
 * [Advanced Build Instructions](AdvancedBuildInstructions.md)
 * [Troubleshooting](Troubleshooting.md)
 * [Testing](Testing.md)

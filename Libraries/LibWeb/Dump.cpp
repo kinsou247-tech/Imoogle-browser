@@ -1,7 +1,7 @@
 /*
- * Copyright (c) 2018-2023, Andreas Kling <andreas@ladybird.org>
+ * Copyright (c) 2018-2023, Andreas Kling <andreas@imooglebrowser.org>
  * Copyright (c) 2021, the SerenityOS developers.
- * Copyright (c) 2021-2025, Sam Atkins <sam@ladybird.org>
+ * Copyright (c) 2021-2025, Sam Atkins <sam@imooglebrowser.org>
  *
  * SPDX-License-Identifier: BSD-2-Clause
  */

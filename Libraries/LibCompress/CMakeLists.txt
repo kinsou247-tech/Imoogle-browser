@@ -6,7 +6,7 @@ set(SOURCES
     Zlib.cpp
 )
 
-ladybird_lib(LibCompress compress)
+imooglebrowser_lib(LibCompress compress)
 target_link_libraries(LibCompress PRIVATE LibCore LibCrypto)
 
 find_package(ZLIB REQUIRED)

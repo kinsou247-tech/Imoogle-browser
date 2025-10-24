@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2020, the SerenityOS developers.
- * Copyright (c) 2024-2025, Sam Atkins <sam@ladybird.org>
+ * Copyright (c) 2024-2025, Sam Atkins <sam@imooglebrowser.org>
  *
  * SPDX-License-Identifier: BSD-2-Clause
  */

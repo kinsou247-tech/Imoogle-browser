@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025, Ladybird contributors
+ * Copyright (c) 2025, ImoogleBrowser contributors
  *
  * SPDX-License-Identifier: BSD-2-Clause
  */

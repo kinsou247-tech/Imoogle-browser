@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025, Jelle Raaijmakers <jelle@ladybird.org>
+ * Copyright (c) 2025, Jelle Raaijmakers <jelle@imooglebrowser.org>
  * Copyright (c) 2025, Lucien Fiorini <lucienfiorini@gmail.com>
  *
  * SPDX-License-Identifier: BSD-2-Clause

@@ -1130,7 +1130,7 @@ set(GENERATED_SOURCES
     HTML/Parser/NamedCharacterReferences.cpp
 )
 
-ladybird_lib(LibWeb web EXPLICIT_SYMBOL_EXPORT)
+imooglebrowser_lib(LibWeb web EXPLICIT_SYMBOL_EXPORT)
 
 find_package(LibXml2 REQUIRED)
 

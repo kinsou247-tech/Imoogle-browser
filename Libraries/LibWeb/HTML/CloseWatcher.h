@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024, the Ladybird developers.
+ * Copyright (c) 2024, the ImoogleBrowser developers.
  *
  * SPDX-License-Identifier: BSD-2-Clause
  */

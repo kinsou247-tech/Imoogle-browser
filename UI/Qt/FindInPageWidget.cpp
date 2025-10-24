@@ -11,7 +11,7 @@
 
 #include <QKeyEvent>
 
-namespace Ladybird {
+namespace ImoogleBrowser {
 
 FindInPageWidget::FindInPageWidget(Tab* tab, WebContentView* content_view)
     : QWidget(static_cast<QWidget*>(tab), Qt::Widget)

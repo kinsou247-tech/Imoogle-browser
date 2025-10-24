@@ -1,8 +1,8 @@
 # Visual Studio Code Project Configuration
 
-Visual Studio Code requires some configuration files, and a tailored ``settings.json`` file to understand ladybird.
+Visual Studio Code requires some configuration files, and a tailored ``settings.json`` file to understand imooglebrowser.
 
-The WSL Remote extension allows you to use VS Code in Windows while using the normal WSL workflow. This works well, but for code comprehension speed you should put the ladybird directory on your WSL root partition.
+The WSL Remote extension allows you to use VS Code in Windows while using the normal WSL workflow. This works well, but for code comprehension speed you should put the imooglebrowser directory on your WSL root partition.
 
 The recommended extensions for VS Code include:
 
@@ -12,7 +12,7 @@ The recommended extensions for VS Code include:
 
 ## Configuration
 
-Run `./Meta/ladybird.py build` at least once to kick off downloading and building vcpkg dependencies.
+Run `./Meta/imooglebrowser.py build` at least once to kick off downloading and building vcpkg dependencies.
 
 The CMake Tools plugin should automatically detect the `CMakePresets.json` at the root of the repository.
 Selecting and activating the `default` preset should be enough to get started after the initial build.
@@ -30,7 +30,7 @@ The official clangd extension can be used for C++ comprehension. It is recommend
 
 clangd uses ``compile_commands.json`` files to understand the project. CMake will generate these in Build/release.
 
-Run ``./Meta/ladybird.py run ladybird`` at least once to generate the ``compile_commands.json`` file.
+Run ``./Meta/imooglebrowser.py run imooglebrowser`` at least once to generate the ``compile_commands.json`` file.
 
 #### Known issues
 
@@ -55,7 +55,7 @@ following ``c_cpp_properties.json`` to circumvent some errors. Even with the con
 {
     "configurations": [
         {
-            "name": "ladybird-gcc",
+            "name": "imooglebrowser-gcc",
             "includePath": [
                 "${workspaceFolder}",
                 "${workspaceFolder}/Build/release/",
@@ -101,7 +101,7 @@ clangd provides code formatting out of the box using the ``clang-format`` engine
 
 ## Settings
 
-These belong in the `.vscode/settings.json` of Ladybird.
+These belong in the `.vscode/settings.json` of Imoogle Browser.
 
 ```json
 {
@@ -120,7 +120,7 @@ These belong in the `.vscode/settings.json` of Ladybird.
         "Toolchain/Build/**": true,
         "Build/**": true,
     },
-    // Force clang-format to respect Ladybird's .clang-format style file. This is not necessary if you're not using the Microsoft C++ extension.
+    // Force clang-format to respect Imoogle Browser's .clang-format style file. This is not necessary if you're not using the Microsoft C++ extension.
     "C_Cpp.clang_format_style": "file",
     // Tab settings
     "editor.tabSize": 4,
@@ -143,7 +143,7 @@ These belong in the `.vscode/settings.json` of Ladybird.
 
 ### Custom Tasks
 
-You can create custom tasks (`.vscode/tasks.json`) to quickly compile Ladybird.
+You can create custom tasks (`.vscode/tasks.json`) to quickly compile Imoogle Browser.
 The following three example tasks should suffice in most situations, and allow you to specify the build system to use, as well as give you error highlighting.
 
 <details>
@@ -170,7 +170,7 @@ The following three example tasks should suffice in most situations, and allow y
             ],
             "args": [
                 "-c",
-                "\"Meta/ladybird.py build\""
+                "\"Meta/imooglebrowser.py build\""
             ],
             "presentation": {
                 "echo": true,
@@ -188,7 +188,7 @@ The following three example tasks should suffice in most situations, and allow y
             "command": "bash",
             "args": [
                 "-c",
-                "Meta/ladybird.py build"
+                "Meta/imooglebrowser.py build"
             ],
             "problemMatcher": [
                 {
@@ -225,7 +225,7 @@ The following three example tasks should suffice in most situations, and allow y
             "command": "bash",
             "args": [
                 "-c",
-                "Meta/ladybird.py run ladybird"
+                "Meta/imooglebrowser.py run imooglebrowser"
             ],
             "options": {
                 "env": {
@@ -294,19 +294,19 @@ If you want to run the debugger, first place the content below in `.vscode/launc
             "name": "Attach to WebContent",
             "type": "lldb",
             "request": "attach",
-            "program": "${workspaceFolder}/Build/debug/bin/Ladybird.app/Contents/MacOS/WebContent",
+            "program": "${workspaceFolder}/Build/debug/bin/Imoogle Browser.app/Contents/MacOS/WebContent",
         }
     ],
 }
 ```
 
-then run Ladybird with the debug preset and with the `--debug-process WebContent` flag:
+then run Imoogle Browser with the debug preset and with the `--debug-process WebContent` flag:
 
 ```bash
-CC=$(brew --prefix llvm)/bin/clang CXX=$(brew --prefix llvm)/bin/clang++ BUILD_PRESET=Debug ./Meta/ladybird.py run ladybird --debug-process WebContent
+CC=$(brew --prefix llvm)/bin/clang CXX=$(brew --prefix llvm)/bin/clang++ BUILD_PRESET=Debug ./Meta/imooglebrowser.py run imooglebrowser --debug-process WebContent
 ```
 
-Running Ladybird in this way will pause execution until a debugger is attached. You can then run the debugger by going to the **Run and Debug** menu and selecting the **Attach to WebContent** configuration.
+Running Imoogle Browser in this way will pause execution until a debugger is attached. You can then run the debugger by going to the **Run and Debug** menu and selecting the **Attach to WebContent** configuration.
 
 #### Linux
 For Linux, the `launch.json` will instead be the file below.
@@ -326,17 +326,17 @@ For Linux, the `launch.json` will instead be the file below.
 }
 ```
 
-Running Ladybird as follows:
+Running Imoogle Browser as follows:
 
 ```bash
-BUILD_PRESET=Debug Meta/ladybird.py run ladybird --debug-process WebContent
+BUILD_PRESET=Debug Meta/imooglebrowser.py run imooglebrowser --debug-process WebContent
 ```
 
 Then follow the same steps found in the Mac section. Notice also that you need to have `gdb` (the GNU Debugger) installed.
 
 ### License snippet
 
-The following snippet may be useful if you want to quickly generate a license header, put it in `.vscode/ladybird.code-snippets`:
+The following snippet may be useful if you want to quickly generate a license header, put it in `.vscode/imooglebrowser.code-snippets`:
 ```json
 {
     "License": {

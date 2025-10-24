@@ -14,7 +14,7 @@ set(TEST_SOURCES
 )
 
 foreach(source IN LISTS TEST_SOURCES)
-    ladybird_test("${source}" LibWeb LIBS LibWeb)
+    imooglebrowser_test("${source}" LibWeb LIBS LibWeb)
 endforeach()
 
 target_link_libraries(TestFetchURL PRIVATE LibURL)

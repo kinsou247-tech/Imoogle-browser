@@ -24,7 +24,7 @@ set(SOURCES
     SecureRandom.cpp
 )
 
-ladybird_lib(LibCrypto crypto)
+imooglebrowser_lib(LibCrypto crypto)
 
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(libtommath REQUIRED IMPORTED_TARGET libtommath)

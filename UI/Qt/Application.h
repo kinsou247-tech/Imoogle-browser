@@ -13,7 +13,7 @@
 
 #include <QApplication>
 
-namespace Ladybird {
+namespace ImoogleBrowser {
 
 class Application : public WebView::Application {
     WEB_VIEW_APPLICATION(Application)

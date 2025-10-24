@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022, Andreas Kling <andreas@ladybird.org>
+ * Copyright (c) 2022, Andreas Kling <andreas@imooglebrowser.org>
  * Copyright (c) 2023, Linus Groh <linusg@serenityos.org>
  *
  * SPDX-License-Identifier: BSD-2-Clause
@@ -19,7 +19,7 @@
 #include <QTabWidget>
 #include <QToolBar>
 
-namespace Ladybird {
+namespace ImoogleBrowser {
 
 class Tab;
 class WebContentView;

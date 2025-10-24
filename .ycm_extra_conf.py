@@ -38,7 +38,7 @@ import ycm_core
 DIR_OF_THIS_SCRIPT = os.path.abspath(os.path.dirname(__file__))
 SOURCE_EXTENSIONS = [".cpp", ".c"]
 
-database = ycm_core.CompilationDatabase(os.path.join(DIR_OF_THIS_SCRIPT, "Build/ladybird"))
+database = ycm_core.CompilationDatabase(os.path.join(DIR_OF_THIS_SCRIPT, "Build/imooglebrowser"))
 
 
 def is_header_file(filename):
